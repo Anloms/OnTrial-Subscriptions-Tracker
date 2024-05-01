@@ -18,7 +18,7 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
 });
-let port = process.env.PROD_PORT;
+let port = process.env.PORT;
 if (!port) {
     port = 8080;
 } else {
