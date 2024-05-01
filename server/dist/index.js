@@ -20,12 +20,12 @@ app.use((err, req, res, next) => {
 });
 let port = process.env.PROD_PORT;
 if (!port) {
-    port = 8000;
+    port = 8080;
 } else {
     port = Number(port);
     if (isNaN(port) || port < 0 || port > 65535) {
         console.error('Invalid port number, defaulting to 8000');
-        port = 8000;
+        port = 8080;
     }
 }
 app.listen(port, () => {
