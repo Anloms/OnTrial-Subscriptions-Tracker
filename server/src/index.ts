@@ -11,11 +11,18 @@ app.use(express.json())
 app.use('/', subscriptionRouter)
 
 let port: string | number | undefined = process.env.PORT
+
 if (port === null || port === '') {
-  port = 8000
+  port = 3000
+} else {
+  port = Number(port)
+  if (isNaN(port) || port < 0 || port > 65535) {
+    console.error('Invalid port number, defaulting to 8000')
+    port = 3000
+  }
 }
 
-app.listen(Number(port), () => {
+app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
 
