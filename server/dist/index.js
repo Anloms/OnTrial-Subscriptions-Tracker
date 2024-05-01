@@ -15,9 +15,9 @@ app.use(express_1.default.json());
 app.use(express_1.default.static(path_1.default.join(__dirname, '../client/dist')));
 app.use('/', router_1.default);
 
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../client/dist/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path_1.default.join(__dirname, '../client/dist/index.html'));
+// });
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
