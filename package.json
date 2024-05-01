@@ -4,9 +4,9 @@
   "description": "This **OnTrial Subscription Tracker** enables users to effectively manage their subscriptions. Users can view, add, update, and delete subscriptions, as well as receive timely in-app notifications for upcoming billing dates.",
   "main": "server/dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm install && npm run build",
-    "start": "node server/dist/index.js"
+    "build": "cd client && npm install --verbose && npm run build",
+    "start": "node server/dist/index.js",
+    "postinstall": "npm run build"
   },
   "author": "",
   "license": "ISC",
