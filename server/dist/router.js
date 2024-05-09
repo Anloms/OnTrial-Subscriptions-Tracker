@@ -7,9 +7,6 @@ const express_1 = __importDefault(require("express"));
 // const express = require('express');
 const controllers_1 = require("./controllers/controllers");
 const router = express_1.default.Router();
-router.get('/', (req, res) => {
-    res.status(200).send('Welcome to the OnTrial Subscription Tracker!');
-});
 router.get('/subscriptions', controllers_1.getSubs);
 router.post('/subscriptions', controllers_1.addSub);
 router.put('/subscriptions/:id', controllers_1.editSub);
