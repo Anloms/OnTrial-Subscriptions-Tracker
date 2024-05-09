@@ -11,6 +11,9 @@ import {
 
 const router = express.Router()
 
+router.get('/', (req, res) => {
+  res.status(200).send('Welcome to the OnTrial Subscription Tracker!')
+})
 router.get('/subscriptions', getSubs)
 router.post('/subscriptions', addSub)
 router.put('/subscriptions/:id', editSub)
